@@ -1,35 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-black text-violet-400 font-sans">
 
     <!-- NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-10">
-        <nav class="flex justify-between items-center h-20 px-6 bg-gray-900/90 backdrop-blur-md shadow-md">
-            <!-- Logo -->
-            <a href="#" class="text-3xl font-bold text-violet-500 hover:text-violet-400 transition">Omnia.</a>
+<header class="fixed top-0 left-0 right-0 z-50">
+    <nav class="relative flex justify-between items-center h-20 px-6 bg-gray-900/90 backdrop-blur-md shadow-md">
+    <!-- Logo -->
+    <a href="#" class="text-3xl font-bold text-violet-500 hover:text-violet-400 transition">Omnia.</a>
 
-            <!-- NavLinks -->
-            <ul class="hidden md:flex items-center gap-10">
-                <li><a href="#home" class="uppercase text-sm hover:text-violet-300 transition">Home</a></li>
-                <li><a href="#about" class="uppercase text-sm hover:text-violet-300 transition">About</a></li>
-                <li><a href="#projects" class="uppercase text-sm hover:text-violet-300 transition">Projects</a></li>
-                <li><a href="#contact" class="uppercase text-sm hover:text-violet-300 transition">Contact</a></li>
-            </ul>
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-10">
+        <li><a href="#home" class="uppercase text-sm hover:text-violet-300 transition">Home</a></li>
+        <li><a href="#about" class="uppercase text-sm hover:text-violet-300 transition">About</a></li>
+        <li><a href="#projects" class="uppercase text-sm hover:text-violet-300 transition">Projects</a></li>
+        <li><a href="#contact" class="uppercase text-sm hover:text-violet-300 transition">Contact</a></li>
+    </ul>
 
-        <!-- hamburger -->
-            <a href="#" class="text-2xl md:hidden text-violet-400"><i class="fa fa-bars"></i></a>
-        </nav>
-    </header>
+    <button id="burger" class="cursor-pointer md:hidden text-2xl text-violet-400" aria-expanded="false" aria-controls="menu">
+        <i id="bars" class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Mobile menu  -->
+        <ul id="menu"
+            class="md:hidden hidden absolute top-20 left-0 right-0 z-50
+                    flex flex-col gap-4 bg-gray-900  p-4  shadow-xl transition">
+                    <li><a href="#home" class="block py-2 px-3 rounded hover:bg-gray-800">Home</a></li>
+                    <li><a href="#about" class="block py-2 px-3 rounded hover:bg-gray-800">About</a></li>
+                    <li><a href="#projects" class="block py-2 px-3 rounded hover:bg-gray-800">Projects</a></li>
+                    <li><a href="#contact" class="block py-2 px-3 rounded hover:bg-gray-800">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
 
     <!-- HERO -->
-    <section id="home" class="h-screen flex justify-center items-center bg-gradient-to-br from-black via-gray-900 to-gray-800">
+    <section id="home" class=" h-screen flex justify-center items-center bg-gradient-to-br from-black via-gray-900 to-gray-800">
         <div class="text-center">
             <h1 class="text-6xl md:text-8xl font-bold tracking-tight text-violet-500 drop-shadow-lg">Hello</h1>
             <ul class="flex justify-center gap-6 mt-6 text-2xl">
@@ -87,7 +101,7 @@
                     <input type="text" placeholder="Subject" class="flex-1 p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-violet-500 outline-none transition"/>
                 </div>
                 <textarea placeholder="Message" class="w-full h-32 p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-violet-500 outline-none transition"></textarea>
-                <button type="submit" class="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-violet-500/40 transition transform hover:scale-105">Send Message</button>
+                <button type="submit" class="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-violet-500/40 transition transform hover:scale-105 cursor-pointer">Send Message</button>
             </form>
         </div>
     </section>
@@ -105,5 +119,6 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
