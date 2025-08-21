@@ -19,3 +19,16 @@ menu.querySelectorAll('a').forEach(a => {
         burger.setAttribute('aria-expanded', 'false');
     });
 });
+
+var typed = new Typed('#typing', {
+    strings: ['Hello, ', "I'm Omnia Tawfek","FrontEnd Developer"],
+    typeSpeed: 70,
+    loop: true,
+    backDelay: 500,
+    showCursor: false,
+    });
+
+        AOS.init({
+        duration: 1000,
+        once: true
+        });
